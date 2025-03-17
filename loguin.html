@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="loguin.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="tab-links">
+        <a href="#" class="active" id="loginTab" onclick="showForm('login')">Login</a>
+        <a href="#" id="cadastroTab" onclick="showForm('cadastro')">Cadastro</a>
+    </div>
+
+    <div id="loginForm" class="form-container">
+        <h2>Login</h2>
+        <form action="#" method="POST">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Usei um codigo pronto para fazer o loguin, conforme avanço do projeto vou editalo-->  
+
+    <div id="cadastroForm" class="form-container">
+        <h2>Cadastro</h2>
+        <form action="#" method="POST">
+            <input type="text" placeholder="Nome Completo" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirmar Senha" required>
+            <input type="date" placeholder="Data de Nascimento" required>
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showForm(formType) {
+
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('cadastroForm').style.display = 'none';
+        
+        if (formType === 'login') {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('loginTab').classList.add('active');
+            document.getElementById('cadastroTab').classList.remove('active');
+        } else {
+            document.getElementById('cadastroForm').style.display = 'block';
+            document.getElementById('cadastroTab').classList.add('active');
+            document.getElementById('loginTab').classList.remove('active');
+        }
+    }
+
+    showForm('login');
+</script>
+
+</body>
+</html>
